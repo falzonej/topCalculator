@@ -1,0 +1,24 @@
+#row1{
+  display: flex;
+  flex-direction: row;
+}
+
+#row2{
+  display: flex;
+  flex-direction: row;
+}
+
+#row3{
+  display: flex;
+  flex-direction: row;
+}
+
+#row4{
+  display: flex;
+  flex-direction: row;
+}
+
+.rows{
+  display: flex;
+  flex-direction: column;
+}

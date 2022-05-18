@@ -14,6 +14,5 @@ const operators = {
 }
 
 const operate = (operators) => {
-  result = operators;
-  return result;
+  return operators;
 }
