@@ -1,3 +1,10 @@
+#calculatorDisplay{
+  display: flex;
+  border: black 1px solid;
+  width: 9vh;
+  height: 2vh;
+}
+
 #row1{
   display: flex;
   flex-direction: row;
