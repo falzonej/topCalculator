@@ -1,19 +1,15 @@
 const operators = {
   add: (x, y) => {
-  	let result = x + y;
-    return result
+  	return x + y;
   },
   subtract: (x, y) => {
-    let result = x - y;
-    return result;
+    return x - y;
   },
   divide: (x, y) => {
-  	result = x / y;
-    return result;
+  	return x / y;
   },
   multiply: (x, y) => {
-    result = x * y; 
-    return result;
+    return x * y; 
   }
 }
 
