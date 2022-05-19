@@ -16,6 +16,10 @@ const divideOperator = document.querySelector('#divideOperator');
 const clearOperator = document.querySelector('#clear');
 const equalsOperator = document.querySelector('#equalsOperator');
 
+button1.addEventListener('click', e =>{
+  console.log('1');
+})
+
 const operators = {
   add: (x, y) => {
   	return x + y;
@@ -38,5 +42,8 @@ const operate = (operators) => {
 const clear = () => {
   return calculatorDisplay.textContent = '';
 }
+
+
+
 
 // look into how to make a text container that will hold the results and possibly show the calculations
