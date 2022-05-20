@@ -17,46 +17,46 @@ const clearOperator = document.querySelector('#clear');
 const equalsOperator = document.querySelector('#equalsOperator');
 
 button1.addEventListener('click', e =>{
-  currentCalc.one = 1;})
+  queuedNumbers.one = 1;})
 
 button2.addEventListener('click', e =>{
-  currentCalc.two = 2;})
+  queuedNumbers.two = 2;})
 
 button3.addEventListener('click', e =>{
-  currentCalc.three = 3;})
+  queuedNumbers.three = 3;})
 
 button4.addEventListener('click', e =>{
-  currentCalc.four = 4;})
+  queuedNumbers.four = 4;})
 
 button5.addEventListener('click', e =>{
-  currentCalc.five = 5;})
+  queuedNumbers.five = 5;})
 
 button6.addEventListener('click', e =>{
-  currentCalc.six = 6;})
+  queuedNumbers.six = 6;})
 
 button7.addEventListener('click', e =>{
-  currentCalc.seven = 7;})
+  queuedNumbers.seven = 7;})
 
 button8.addEventListener('click', e =>{
-  currentCalc.eight = 8;})
+  queuedNumbers.eight = 8;})
 
 button9.addEventListener('click', e =>{
-  currentCalc.nine = 9;})
+  queuedNumbers.nine = 9;})
 
 button0.addEventListener('click', e =>{
-  currentCalc.zero = 0;})
+  queuedNumbers.zero = 0;})
 
 addOperator.addEventListener('click', e =>{
-  currentCalc.addOperator = operators.add;})
+  queuedOperators.addOperator = operators.add;})
 
 subtractOperator.addEventListener('click', e =>{
-  currentCalc.subtractOperator = operators.subtract;})
+  queuedOperators.subtractOperator = operators.subtract;})
 
 multiplyOperator.addEventListener('click', e =>{
-  currentCalc.multiplyOperator = operators.multiply;})
+  queuedOperators.multiplyOperator = operators.multiply;})
 
 divideOperator.addEventListener('click', e =>{
-  currentCalc.divideOperator = operators.divide;})
+  queuedOperators.divideOperator = operators.divide;})
 
 clearOperator.addEventListener('click', e =>{
   clear();})
@@ -80,13 +80,22 @@ const operate = (operators) => {
 }
 
 const clear = () => {
-  for (const key in currentCalc) {
-    delete currentCalc[key];
+  for (const key in queuedNumbers) {
+    delete queuedNumbers[key];
   }
   calculatorDisplay.textContent = '';
 }
 
-let currentCalc = {};
+let queuedNumbers = {};
+
+let queuedOperators = {};
+
+const equals = (queuedNumbers) => {
+  for (const key in queuedNumbers){
+    if (queuedNumbers.hasOwnProperty(!NaN)){
+
+    }
+  }
+}
 
 
-// look into how to make a text container that will hold the results and possibly show the calculations
