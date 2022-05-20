@@ -64,16 +64,23 @@ clearOperator.addEventListener('click', e =>{
 equalsOperator.addEventListener('click', e =>{
   console.log('1');})
 
-const operators = {
-  add: (x, y) => {
-  	return x + y;},
-  subtract: (x, y) => {
-    return x - y;},
-  divide: (x, y) => {
-  	return x / y;},
-  multiply: (x, y) => {
-    return x * y; }
+
+function add(x,y){
+  return x+y;}
+
+function subtract(x,y){
+  return x-y;
 }
+
+function multiply(x,y){
+  return x*y;
+}
+
+function divide(x,y){
+  return x/y;
+}
+
+
 // operate is run in this format || operate(operators.add(4,4)); ||
 const operate = (operators) => {
   return calculatorDisplay.textContent = operators;
@@ -86,7 +93,7 @@ const clear = () => {
   calculatorDisplay.textContent = '';
 }
 
-let queuedNumbers = {};
+let queuedNumbers = [3,4];
 
 let queuedOperators = {};
 
