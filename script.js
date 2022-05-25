@@ -17,34 +17,34 @@ const clearOperator = document.querySelector('#clear');
 const equalsOperator = document.querySelector('#equalsOperator');
 
 button1.addEventListener('click', e =>{
-  queuedNumbers.one = 1;})
+  queuedNumbers[queuedNumbers.length] = 1;})
 
 button2.addEventListener('click', e =>{
-  queuedNumbers.two = 2;})
+  queuedNumbers[queuedNumbers.length] = 2;})
 
 button3.addEventListener('click', e =>{
-  queuedNumbers.three = 3;})
+  queuedNumbers[queuedNumbers.length] = 3;})
 
 button4.addEventListener('click', e =>{
-  queuedNumbers.four = 4;})
+  queuedNumbers[queuedNumbers.length] = 4;})
 
 button5.addEventListener('click', e =>{
-  queuedNumbers.five = 5;})
+  queuedNumbers[queuedNumbers.length] = 5;})
 
 button6.addEventListener('click', e =>{
-  queuedNumbers.six = 6;})
+  queuedNumbers[queuedNumbers.length] = 6;})
 
 button7.addEventListener('click', e =>{
-  queuedNumbers.seven = 7;})
+  queuedNumbers[queuedNumbers.length] = 7;})
 
 button8.addEventListener('click', e =>{
-  queuedNumbers.eight = 8;})
+  queuedNumbers[queuedNumbers.length] = 8;})
 
 button9.addEventListener('click', e =>{
-  queuedNumbers.nine = 9;})
+  queuedNumbers[queuedNumbers.length] = 9;})
 
 button0.addEventListener('click', e =>{
-  queuedNumbers.zero = 0;})
+  queuedNumbers[queuedNumbers.length] = 0;})
 
 addOperator.addEventListener('click', e =>{
   queuedOperators.addOperator = operators.add;})
@@ -81,9 +81,10 @@ function divide(x,y){
 }
 
 
-// operate is run in this format || operate(operators.add(4,4)); ||
-const operate = (operators) => {
-  return calculatorDisplay.textContent = operators;
+
+function operate(x,y,operator){
+  result = operator(x,y)
+  return result;
 }
 
 const clear = () => {
@@ -93,7 +94,7 @@ const clear = () => {
   calculatorDisplay.textContent = '';
 }
 
-let queuedNumbers = [3,4];
+let queuedNumbers = [];
 
 let queuedOperators = {};
 
