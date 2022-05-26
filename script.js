@@ -17,46 +17,46 @@ const clearOperator = document.querySelector('#clear');
 const equalsOperator = document.querySelector('#equalsOperator');
 
 button1.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 1;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '1';})
 
 button2.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 2;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '2';})
 
 button3.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 3;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '3';})
 
 button4.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 4;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '4';})
 
 button5.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 5;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '5';})
 
 button6.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 6;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '6';})
 
 button7.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 7;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '7';})
 
 button8.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 8;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '8';})
 
 button9.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 9;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '9';})
 
 button0.addEventListener('click', e =>{
-  queuedNumbers[queuedNumbers.length] = 0;})
+  queuedArrayNumbers[queuedArrayNumbers.length] = '0';})
 
 addOperator.addEventListener('click', e =>{
-  queuedOperators.addOperator = operators.add;})
+  queuedOperators[queuedOperators.length] = add();})
 
 subtractOperator.addEventListener('click', e =>{
-  queuedOperators.subtractOperator = operators.subtract;})
+  queuedOperators[queuedOperators.length] = subtract();})
 
 multiplyOperator.addEventListener('click', e =>{
-  queuedOperators.multiplyOperator = operators.multiply;})
+  queuedOperators[queuedOperators.length] = multiply();})
 
 divideOperator.addEventListener('click', e =>{
-  queuedOperators.divideOperator = operators.divide;})
+  queuedOperators[queuedOperators.length] = divide();})
 
 clearOperator.addEventListener('click', e =>{
   clear();})
@@ -88,19 +88,25 @@ function operate(x,y,operator){
 }
 
 const clear = () => {
-  for (const key in queuedNumbers) {
-    delete queuedNumbers[key];
+  for (const key in queuedArrayNumbers) {
+    delete queuedArrayNumbers[key];
   }
   calculatorDisplay.textContent = '';
 }
 
-let queuedNumbers = [];
+let queuedArrayNumbers = [];
 
 let queuedOperators = {};
 
-const equals = (queuedNumbers) => {
-  for (const key in queuedNumbers){
-    if (queuedNumbers.hasOwnProperty(!NaN)){
+let getNumbers = () => {
+  return queuedArrayNumbers.join('');
+}
+
+
+// This func needs to be reworked
+const equals = (queuedArrayNumbers) => {
+  for (const key in queuedArrayNumbers){
+    if (queuedArrayNumbers.hasOwnProperty(!NaN)){
 
     }
   }
