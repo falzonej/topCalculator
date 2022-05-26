@@ -98,9 +98,11 @@ let queuedArrayNumbers = [];
 
 let queuedOperators = {};
 
-let getNumbers = () => {
-  return queuedArrayNumbers.join('');
+getNumbers = () => {
+  stringNumbers = queuedArrayNumbers.join('');
+  return parseInt(stringNumbers)
 }
+
 
 
 // This func needs to be reworked
