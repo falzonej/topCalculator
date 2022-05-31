@@ -54,7 +54,7 @@ let queuedArrayNumbers = [];
 
 let queuedOperators = {};
 
-let queuedNumbers = 0;
+let queuedNumbers = [];
 
 function convertArrayToInteger(arr) {
   stringNumbers = arr.join('');
@@ -62,7 +62,8 @@ function convertArrayToInteger(arr) {
 }
 
 function updateQueuedNumbers() {
-  queuedNumbers = convertArrayToInteger(queuedArrayNumbers);
+  queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
+  queuedArrayNumbers = [];
 }
 
 // This func needs to be reworked
