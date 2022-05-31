@@ -52,9 +52,9 @@ function operate(operator,x,y){
 
 let queuedArrayNumbers = [];
 
-let queuedOperators = {};
-
 let queuedNumbers = [];
+
+let queuedOperators = [];
 
 function convertArrayToInteger(arr) {
   stringNumbers = arr.join('');
@@ -66,74 +66,84 @@ function updateQueuedNumbers() {
   queuedArrayNumbers = [];
 }
 
-// This func needs to be reworked
-const equals = (queuedArrayNumbers) => {
-  for (const key in queuedArrayNumbers){
-    if (queuedArrayNumbers.hasOwnProperty(!NaN)){
-
-    }
+function getCurrentValue() {
+  for (let i = 1; i < queuedNumbers.length; i++){
+  currentValue = queuedNumbers[i];
+  return currentValue
   }
 }
+
+function getCurrentOperator() {
+  for(let i = 0; i < queuedOperators.length; i++){
+    currentOperator = queuedOperators[i];
+    return currentOperator
+  }
+}
+
+function equals(){
+  let previousValue = queuedNumbers[0]
+  
+  
+}
+
+// This func needs to be reworked or discarded
+//const equals = (queuedArrayNumbers) => {
+//  for (const key in queuedArrayNumbers){
+//    if (queuedArrayNumbers.hasOwnProperty(!NaN)){
+//
+//    }
+//  }
+//}
 
 
 
 button1.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '1';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button2.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '2';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button3.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '3';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button4.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '4';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button5.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '5';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button6.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '6';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button7.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '7';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button8.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '8';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button9.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '9';})
-  queuedOperators[queuedOperators.length] = 0;
 
 button0.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '0';})
-  queuedOperators[queuedOperators.length] = 0;
 
 addOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = add();
+  queuedOperators[queuedOperators.length] = add;
   updateQueuedNumbers();
 })
 
 subtractOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = subtract();
+  queuedOperators[queuedOperators.length] = subtract;
   updateQueuedNumbers();
 })
 
 multiplyOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = multiply();
+  queuedOperators[queuedOperators.length] = multiply;
   updateQueuedNumbers();
 })
 
 divideOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = divide();
+  queuedOperators[queuedOperators.length] = divide;
   updateQueuedNumbers();
 })
 
