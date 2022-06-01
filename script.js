@@ -33,16 +33,6 @@ function divide(x,y){
   return x/y;
 }
 
-
-//when making the loop function leave operator variable in a way
-//so it can hold the stored operator value until it is given a 
-//new value
-function operate(operator,x,y){
-  operatorInOperation = operator
-  result = operatorInOperation(x,y)
-  return result;
-}
-
 //const clear = () => {
 //  for (const key in queuedArrayNumbers) {
 //    delete queuedArrayNumbers[key];
@@ -66,34 +56,35 @@ function updateQueuedNumbers() {
   queuedArrayNumbers = [];
 }
 
-function getCurrentValue() {
+function getCurrentValue(queuedNumbers) {
   for (let i = 1; i < queuedNumbers.length; i++){
   currentValue = queuedNumbers[i];
   return currentValue
   }
 }
 
-function getCurrentOperator() {
+function getCurrentOperator(queuedOperators) {
   for(let i = 0; i < queuedOperators.length; i++){
     currentOperator = queuedOperators[i];
     return currentOperator
   }
 }
 
-function equals(){
-  let previousValue = queuedNumbers[0]
-  
-  
+//when making the loop function leave operator variable in a way
+//so it can hold the stored operator value until it is given a 
+//new value
+function operate(operator,x,y){
+  operatorInOperation = operator
+  result = operatorInOperation(x,y)
+  return result;
 }
 
-// This func needs to be reworked or discarded
-//const equals = (queuedArrayNumbers) => {
-//  for (const key in queuedArrayNumbers){
-//    if (queuedArrayNumbers.hasOwnProperty(!NaN)){
-//
-//    }
-//  }
-//}
+function equals() {
+  previousValue = queuedNumbers[0];
+  getCurrentValue(queuedNumbers);
+  getCurrentOperator(queuedOperators);
+  console.log(operate(currentOperator,previousValue,currentValue));
+}
 
 
 
