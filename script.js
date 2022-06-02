@@ -33,12 +33,7 @@ function divide(x,y){
   return x/y;
 }
 
-//const clear = () => {
-//  for (const key in queuedArrayNumbers) {
-//    delete queuedArrayNumbers[key];
-//  }
-//  calculatorDisplay.textContent = '';
-//}
+
 
 let queuedArrayNumbers = [];
 
@@ -81,12 +76,18 @@ function operate(operator,x,y){
 
 function equals() {
   previousValue = queuedNumbers[0];
-  getCurrentValue(queuedNumbers);
-  getCurrentOperator(queuedOperators);
+  for(let i = 0; i < queuedNumbers.length; i++){
+    getCurrentValue(queuedNumbers);
+    getCurrentOperator(queuedOperators);
+  }
   console.log(operate(currentOperator,previousValue,currentValue));
 }
 
-
+const clear = () => {
+  queuedNumbers = [];
+  queuedOperators = [];
+  calculatorDisplay.textContent = '';
+}
 
 button1.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '1';})
