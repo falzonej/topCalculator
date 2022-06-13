@@ -43,12 +43,14 @@ let queuedOperators = [];
 
 function convertArrayToInteger(arr) {
   stringNumbers = arr.join('');
+  queuedArrayNumbers = []
   return parseInt(stringNumbers);
 }
 
+queuedArrayNumbers = [];
+
 function updateQueuedNumbers() {
   queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
-  queuedArrayNumbers = [];
 }
 
 function getCurrentValue(queuedNumbers) {
