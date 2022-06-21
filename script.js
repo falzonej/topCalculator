@@ -47,23 +47,23 @@ function convertArrayToInteger(arr) {
   return parseInt(stringNumbers);
 }
 
-queuedArrayNumbers = [];
-
 function updateQueuedNumbers() {
   queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
+  queuedArrayNumbers = []
 }
-
+//can we cut the pulled value out of the queuedNumbers array after it has been
+// pulled by getCurrentValue to ensure that the loop continues correctly
 function getCurrentValue(queuedNumbers) {
   for (let i = 1; i < queuedNumbers.length; i++){
-  currentValue = queuedNumbers[i];
-  return currentValue
+    let currentValueOutOfArray = queuedNumbers[i];
+    return currentValueOutOfArray;
   }
 }
 
 function getCurrentOperator(queuedOperators) {
   for(let i = 0; i < queuedOperators.length; i++){
-    currentOperator = queuedOperators[i];
-    return currentOperator
+    let currentOperatorOutOfArray = queuedOperators[i];
+    return currentOperatorOutOfArray;
   }
 }
 
@@ -71,16 +71,20 @@ function getCurrentOperator(queuedOperators) {
 //so it can hold the stored operator value until it is given a 
 //new value
 function operate(operator,x,y){
-  operatorInOperation = operator
-  result = operatorInOperation(x,y)
+  operatorInOperation = operator;
+  result = operatorInOperation(x,y);
   return result;
 }
 
 function equals() {
-  previousValue = queuedNumbers[0];
+  let previousValue = queuedNumbers[0];
+  let currentValue;
+  let currentOperator;
   for(let i = 0; i < queuedNumbers.length; i++){
-    getCurrentValue(queuedNumbers);
-    getCurrentOperator(queuedOperators);
+    currentValue = getCurrentValue(queuedNumbers);
+  }
+  for(let i = 0; i < queuedNumbers.length; i++){
+    currentOperator = getCurrentOperator(queuedOperators);
   }
   console.log(operate(currentOperator,previousValue,currentValue));
 }
@@ -145,4 +149,4 @@ clearOperator.addEventListener('click', e =>{
   clear();})
 
 equalsOperator.addEventListener('click', e =>{
-  console.log('1');})
+  equals();})
