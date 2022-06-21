@@ -54,17 +54,11 @@ function updateQueuedNumbers() {
 //can we cut the pulled value out of the queuedNumbers array after it has been
 // pulled by getCurrentValue to ensure that the loop continues correctly
 function getCurrentValue(queuedNumbers) {
-  for (let i = 1; i < queuedNumbers.length; i++){
-    let currentValueOutOfArray = queuedNumbers[i];
-    return currentValueOutOfArray;
-  }
+  return queuedNumbers.shift();
 }
 
 function getCurrentOperator(queuedOperators) {
-  for(let i = 0; i < queuedOperators.length; i++){
-    let currentOperatorOutOfArray = queuedOperators[i];
-    return currentOperatorOutOfArray;
-  }
+  return queuedOperators.shift();
 }
 
 //when making the loop function leave operator variable in a way
@@ -77,15 +71,9 @@ function operate(operator,x,y){
 }
 
 function equals() {
-  let previousValue = queuedNumbers[0];
-  let currentValue;
-  let currentOperator;
-  for(let i = 0; i < queuedNumbers.length; i++){
-    currentValue = getCurrentValue(queuedNumbers);
-  }
-  for(let i = 0; i < queuedNumbers.length; i++){
-    currentOperator = getCurrentOperator(queuedOperators);
-  }
+  let previousValue = getCurrentValue(queuedNumbers);
+  let currentValue = getCurrentValue(queuedNumbers);
+  let currentOperator = getCurrentOperator(queuedOperators);
   console.log(operate(currentOperator,previousValue,currentValue));
 }
 
