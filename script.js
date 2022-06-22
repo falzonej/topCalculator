@@ -51,8 +51,7 @@ function updateQueuedNumbers() {
   queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
   queuedArrayNumbers = []
 }
-//can we cut the pulled value out of the queuedNumbers array after it has been
-// pulled by getCurrentValue to ensure that the loop continues correctly
+
 function getCurrentValue(queuedNumbers) {
   return queuedNumbers.shift();
 }
@@ -61,20 +60,23 @@ function getCurrentOperator(queuedOperators) {
   return queuedOperators.shift();
 }
 
-//when making the loop function leave operator variable in a way
-//so it can hold the stored operator value until it is given a 
-//new value
+
 function operate(operator,x,y){
   operatorInOperation = operator;
   result = operatorInOperation(x,y);
   return result;
 }
 
+function updateCalcDisplay() {
+  calculatorDisplay.textContent = result;
+}
+
 function equals() {
   let previousValue = getCurrentValue(queuedNumbers);
   let currentValue = getCurrentValue(queuedNumbers);
   let currentOperator = getCurrentOperator(queuedOperators);
-  console.log(operate(currentOperator,previousValue,currentValue));
+  let result = operate(currentOperator,previousValue,currentValue)
+  updateCalcDisplay(result);
 }
 
 const clear = () => {
