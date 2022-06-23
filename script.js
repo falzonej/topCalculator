@@ -76,7 +76,16 @@ function equals() {
   let currentValue = getCurrentValue(queuedNumbers);
   let currentOperator = getCurrentOperator(queuedOperators);
   let result = operate(currentOperator,previousValue,currentValue)
-  updateCalcDisplay(result);
+  queuedNumbers.unshift(result);
+  
+}
+
+function expressionCompletingEquals() {
+  for(let i = 0; i < queuedOperators.length; i++){
+    equals();
+  }
+  clear();
+  return updateCalcDisplay(result);
 }
 
 const clear = () => {
@@ -140,4 +149,4 @@ clearOperator.addEventListener('click', e =>{
 
 equalsOperator.addEventListener('click', e =>{
   updateQueuedNumbers();
-  equals();})
+  expressionCompletingEquals();})
