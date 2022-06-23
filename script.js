@@ -139,4 +139,5 @@ clearOperator.addEventListener('click', e =>{
   clear();})
 
 equalsOperator.addEventListener('click', e =>{
+  updateQueuedNumbers();
   equals();})
