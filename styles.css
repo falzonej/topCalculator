@@ -1,8 +1,9 @@
 #calculatorDisplay{
   display: flex;
   border: black 1px solid;
-  width: 9vh;
-  height: 2vh;
+  justify-content: flex-end;
+  width: 20vh;
+  height: 1.5vh;
 }
 
 #row1{
@@ -23,6 +24,11 @@
 #row4{
   display: flex;
   flex-direction: row;
+}
+
+.buttons{
+  height: 5vh;
+  width: 5vh;
 }
 
 .rows{
