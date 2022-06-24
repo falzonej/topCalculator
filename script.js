@@ -82,7 +82,7 @@ function equals() {
 }
 
 function expressionCompletingEquals() {
-  for(let i = 0; i <= queuedNumbers.length; i++){
+  for(let i = 0; i < queuedNumbers.length; i++){
     equals();
   }
   return updateCalcDisplay(result);
