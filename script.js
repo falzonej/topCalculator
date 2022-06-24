@@ -81,10 +81,9 @@ function equals() {
 }
 
 function expressionCompletingEquals() {
-  for(let i = 0; i < queuedOperators.length; i++){
+  for(let i = 0; i <= queuedNumbers.length; i++){
     equals();
   }
-  clear();
   return updateCalcDisplay(result);
 }
 
@@ -125,22 +124,22 @@ button0.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '0';})
 
 addOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = add;
+  queuedOperators.push(add);
   updateQueuedNumbers();
 })
 
 subtractOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = subtract;
+  queuedOperators.push(subtract);
   updateQueuedNumbers();
 })
 
 multiplyOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = multiply;
+  queuedOperators.push(multiply);
   updateQueuedNumbers();
 })
 
 divideOperator.addEventListener('click', e =>{
-  queuedOperators[queuedOperators.length] = divide;
+  queuedOperators.push(divide);
   updateQueuedNumbers();
 })
 
@@ -150,3 +149,6 @@ clearOperator.addEventListener('click', e =>{
 equalsOperator.addEventListener('click', e =>{
   updateQueuedNumbers();
   expressionCompletingEquals();})
+
+  //equalsOperator button is not adding the final number to the queuedNumbers 
+  //array which is causing the expression to fall short by one evaluation each time
