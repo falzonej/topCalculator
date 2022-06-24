@@ -48,8 +48,9 @@ function convertArrayToInteger(arr) {
 }
 
 function updateQueuedNumbers() {
-  queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
-  queuedArrayNumbers = []
+  if (queuedArrayNumbers >= 1) {
+    queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
+  } else {return};
 }
 
 function getCurrentValue(queuedNumbers) {
@@ -88,6 +89,7 @@ function expressionCompletingEquals() {
 }
 
 const clear = () => {
+  queuedArrayNumbers = [];
   queuedNumbers = [];
   queuedOperators = [];
   calculatorDisplay.textContent = '';
