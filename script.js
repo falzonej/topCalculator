@@ -48,9 +48,8 @@ function convertArrayToInteger(arr) {
 }
 
 function updateQueuedNumbers() {
-  if (queuedArrayNumbers >= 1) {
     queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
-  } else {return};
+    queuedArrayNumbers =[];
 }
 
 function getCurrentValue(queuedNumbers) {
@@ -152,5 +151,5 @@ equalsOperator.addEventListener('click', e =>{
   updateQueuedNumbers();
   expressionCompletingEquals();})
 
-  //equalsOperator button is not adding the final number to the queuedNumbers 
-  //array which is causing the expression to fall short by one evaluation each time
+  //current build requiring an additional operator to be entered so operate
+  //knows what to do with the final # this is bad UI find work around
