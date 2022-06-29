@@ -60,13 +60,24 @@ function getCurrentOperator(queuedOperators) {
   return queuedOperators.shift();
 }
 
+//  operatorInOperation = operator;
+//  result = operatorInOperation(x,y);
 
 function operate(operator,x,y){
-  operatorInOperation = operator;
-  result = operatorInOperation(x,y);
+  let result = 0;
+  if (operator === add){
+    return result = x+y;
+  } else if (operator === subtract){
+    return result = x-y;
+  } else if (operator === multiply){
+    return result = x*y;
+  } else if (operator === divide){
+    return result = x/y;
+  }
   return result;
 }
 
+//since this is a one line function that is only called once, look into removal
 function updateCalcDisplay() {
   calculatorDisplay.textContent = result;
 }
@@ -153,3 +164,6 @@ equalsOperator.addEventListener('click', e =>{
 
   //current build requiring an additional operator to be entered so operate
   //knows what to do with the final # this is bad UI find work around
+
+  //what if we find a way so that when equals is run a 2 of the last entered operators
+  // are added to the queued operators array
