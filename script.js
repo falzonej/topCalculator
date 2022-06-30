@@ -33,8 +33,6 @@ function divide(x,y){
   return x/y;
 }
 
-
-
 let queuedArrayNumbers = [];
 
 let queuedNumbers = [];
@@ -65,37 +63,45 @@ function getCurrentOperator(queuedOperators) {
 
 function operate(operator,x,y){
   let result = 0;
-  if (operator === add){
-    return result = x+y;
-  } else if (operator === subtract){
-    return result = x-y;
-  } else if (operator === multiply){
-    return result = x*y;
-  } else if (operator === divide){
-    return result = x/y;
+  switch(operator){
+    case add:
+      result = x+y;
+      break;
+    case subtract:
+      result = x-y;
+      break;
+    case multiply:
+      result = x*y;
+      break;
+    case divide:
+      result = x/y;
   }
   return result;
 }
 
 //since this is a one line function that is only called once, look into removal
-function updateCalcDisplay() {
-  calculatorDisplay.textContent = result;
+function updateCalcDisplay(input) {
+  calculatorDisplay.textContent = input;
 }
+
+let equalsValue = []
 
 function equals() {
   let previousValue = getCurrentValue(queuedNumbers);
   let currentValue = getCurrentValue(queuedNumbers);
   let currentOperator = getCurrentOperator(queuedOperators);
-  let result = operate(currentOperator,previousValue,currentValue)
-  queuedNumbers.unshift(result);
-  
+  let operation = currentOperator(previousValue,currentValue);
+  queuedNumbers.unshift(operation);
+  equalsValue.shift();
+  equalsValue.push(operation);
+
 }
 
 function expressionCompletingEquals() {
   for(let i = 0; i < queuedNumbers.length; i++){
     equals();
   }
-  return updateCalcDisplay(result);
+  return updateCalcDisplay(equalsValue);
 }
 
 const clear = () => {
