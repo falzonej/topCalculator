@@ -18,20 +18,20 @@ const equalsOperator = document.querySelector('#equalsOperator');
 
 
 
-function add(x,y){
-  return x+y;}
-
-function subtract(x,y){
-  return x-y;
-}
-
-function multiply(x,y){
-  return x*y;
-}
-
-function divide(x,y){
-  return x/y;
-}
+//function '+'(x,y){
+//  return x+y;}
+//
+//function '-'(x,y){
+//  return x-y;
+//}
+//
+//function '*'(x,y){
+//  return x*y;
+//}
+//
+//function '/'(x,y){
+//  return x/y;
+//}
 
 let queuedArrayNumbers = [];
 
@@ -51,29 +51,28 @@ function updateQueuedNumbers() {
 }
 
 function getCurrentValue(queuedNumbers) {
-  return queuedNumbers.shift();
+  let currentValue = queuedNumbers[0];
+  queuedNumbers.splice(0,1)
+  return currentValue;
 }
 
 function getCurrentOperator(queuedOperators) {
   return queuedOperators.shift();
 }
 
-//  operatorInOperation = operator;
-//  result = operatorInOperation(x,y);
-
 function operate(operator,x,y){
   let result = 0;
   switch(operator){
-    case add:
+    case '+':
       result = x+y;
       break;
-    case subtract:
+    case '-':
       result = x-y;
       break;
-    case multiply:
+    case '*':
       result = x*y;
       break;
-    case divide:
+    case '/':
       result = x/y;
   }
   return result;
@@ -90,17 +89,16 @@ function equals() {
   let previousValue = getCurrentValue(queuedNumbers);
   let currentValue = getCurrentValue(queuedNumbers);
   let currentOperator = getCurrentOperator(queuedOperators);
-  let operation = currentOperator(previousValue,currentValue);
+  let operation = operate(currentOperator,previousValue,currentValue)
   queuedNumbers.unshift(operation);
   equalsValue.shift();
   equalsValue.push(operation);
-
 }
 
 function expressionCompletingEquals() {
-  for(let i = 0; i < queuedNumbers.length; i++){
+  queuedNumbers.forEach(() => {
     equals();
-  }
+  });
   return updateCalcDisplay(equalsValue);
 }
 
@@ -142,22 +140,22 @@ button0.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '0';})
 
 addOperator.addEventListener('click', e =>{
-  queuedOperators.push(add);
+  queuedOperators.push('+');
   updateQueuedNumbers();
 })
 
 subtractOperator.addEventListener('click', e =>{
-  queuedOperators.push(subtract);
+  queuedOperators.push('-');
   updateQueuedNumbers();
 })
 
 multiplyOperator.addEventListener('click', e =>{
-  queuedOperators.push(multiply);
+  queuedOperators.push('*');
   updateQueuedNumbers();
 })
 
 divideOperator.addEventListener('click', e =>{
-  queuedOperators.push(divide);
+  queuedOperators.push('/');
   updateQueuedNumbers();
 })
 
