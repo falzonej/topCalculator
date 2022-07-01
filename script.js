@@ -16,23 +16,6 @@ const divideOperator = document.querySelector('#divideOperator');
 const clearOperator = document.querySelector('#clear');
 const equalsOperator = document.querySelector('#equalsOperator');
 
-
-
-//function '+'(x,y){
-//  return x+y;}
-//
-//function '-'(x,y){
-//  return x-y;
-//}
-//
-//function '*'(x,y){
-//  return x*y;
-//}
-//
-//function '/'(x,y){
-//  return x/y;
-//}
-
 let queuedArrayNumbers = [];
 
 let queuedNumbers = [];
