@@ -35,3 +35,11 @@
   display: flex;
   flex-direction: column;
 }
+
+#clear{
+  width: 10vh;
+}
+
+#equalsOperator{
+  width: 15vh;
+}

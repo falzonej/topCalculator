@@ -43,6 +43,10 @@ function getCurrentOperator(queuedOperators) {
   return queuedOperators.shift();
 }
 
+function roundToTwo(num) {
+  return +(Math.round(num + "e+2")  + "e-2");
+}
+
 function operate(operator,x,y){
   let result = 0;
   switch(operator){
@@ -84,10 +88,6 @@ function expressionCompletingEquals() {
   }
   let roundedEqualsValue = roundToTwo(equalsValue);
   return updateCalcDisplay(roundedEqualsValue);
-}
-
-function roundToTwo(num) {
-  return +(Math.round(num + "e+2")  + "e-2");
 }
 
 const clear = () => {
