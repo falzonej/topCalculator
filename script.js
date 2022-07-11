@@ -61,7 +61,6 @@ function operate(operator,x,y){
   return result;
 }
 
-//since this is a one line function that is only called once, look into removal
 function updateCalcDisplay(input) {
   calculatorDisplay.textContent = input;
 }
@@ -79,9 +78,10 @@ function equals() {
 }
 
 function expressionCompletingEquals() {
-  queuedNumbers.forEach(() => {
+  for(let i = 1; i < queuedNumbers.length; i++){
     equals();
-  });
+    i--;
+  };
   return updateCalcDisplay(equalsValue);
 }
 
