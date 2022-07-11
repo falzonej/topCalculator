@@ -82,16 +82,13 @@ function expressionCompletingEquals() {
   while(i<queuedNumbers.length){
     equals();
   }
-  return updateCalcDisplay(equalsValue);
+  let roundedEqualsValue = roundToTwo(equalsValue);
+  return updateCalcDisplay(roundedEqualsValue);
 }
 
-//function expressionCompletingEquals() {
-//  for(let i = 1; i < queuedNumbers.length; i++){
-//    equals();
-//    i--;
-//  };
-//  return updateCalcDisplay(equalsValue);
-//}
+function roundToTwo(num) {
+  return +(Math.round(num + "e+2")  + "e-2");
+}
 
 const clear = () => {
   queuedArrayNumbers = [];
