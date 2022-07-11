@@ -78,12 +78,20 @@ function equals() {
 }
 
 function expressionCompletingEquals() {
-  for(let i = 1; i < queuedNumbers.length; i++){
+  let i = 1;
+  while(i<queuedNumbers.length){
     equals();
-    i--;
-  };
+  }
   return updateCalcDisplay(equalsValue);
 }
+
+//function expressionCompletingEquals() {
+//  for(let i = 1; i < queuedNumbers.length; i++){
+//    equals();
+//    i--;
+//  };
+//  return updateCalcDisplay(equalsValue);
+//}
 
 const clear = () => {
   queuedArrayNumbers = [];
