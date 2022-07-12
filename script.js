@@ -25,18 +25,18 @@ let queuedOperators = [];
 
 function convertArrayToInteger(arr) {
   stringNumbers = arr.join('');
-  queuedArrayNumbers = []
+  queuedArrayNumbers = [];
   return parseFloat(stringNumbers);
 }
 
 function updateQueuedNumbers() {
-    queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
-    queuedArrayNumbers =[];
+  queuedNumbers.push(convertArrayToInteger(queuedArrayNumbers));
+  queuedArrayNumbers =[];
 }
 
 function getCurrentValue(queuedNumbers) {
   let currentValue = queuedNumbers[0];
-  queuedNumbers.splice(0,1)
+  queuedNumbers.splice(0,1);
   return currentValue;
 }
 
@@ -70,13 +70,13 @@ function updateCalcDisplay(input) {
   calculatorDisplay.textContent = input;
 }
 
-let equalsValue = []
+let equalsValue = [];
 
 function equals() {
   let previousValue = getCurrentValue(queuedNumbers);
   let currentValue = getCurrentValue(queuedNumbers);
   let currentOperator = getCurrentOperator(queuedOperators);
-  let operation = operate(currentOperator,previousValue,currentValue)
+  let operation = operate(currentOperator,previousValue,currentValue);
   queuedNumbers.unshift(operation);
   equalsValue.shift();
   equalsValue.push(operation);
@@ -157,9 +157,3 @@ clearOperator.addEventListener('click', e =>{
 equalsOperator.addEventListener('click', e =>{
   updateQueuedNumbers();
   expressionCompletingEquals();})
-
-  //current build requiring an additional operator to be entered so operate
-  //knows what to do with the final # this is bad UI find work around
-
-  //what if we find a way so that when equals is run a 2 of the last entered operators
-  // are added to the queued operators array
