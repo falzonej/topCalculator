@@ -26,7 +26,33 @@
   flex-direction: row;
 }
 
+#clear{
+  justify-content: right;
+  font-weight: 900;
+  font-size: 60px;
+  width: 10vh;
+}
+
+#equalsOperator{
+  justify-content: space-around;
+  align-items:baseline;
+  font-weight: 900;
+  font-size: 60px;
+  background-color: dimgrey;
+  color: whitesmoke;
+  width: 15.4vh;
+}
+
+#decimal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: dimgray;
+}
+
 .buttons{
+  display: flex;
+  margin: .1vh;
   height: 5vh;
   width: 5vh;
 }
@@ -36,10 +62,15 @@
   flex-direction: column;
 }
 
-#clear{
-  width: 10vh;
+.numButton{
+  background-color: bisque;
 }
 
-#equalsOperator{
-  width: 15vh;
+.operatorButton{
+  display: flex;
+  justify-content: space-around;
+  align-items:baseline;
+  font-weight: 900;
+  font-size: 60px;
+  background-color: orange;
 }
