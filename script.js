@@ -9,6 +9,7 @@ const button7 = document.querySelector('#seven');
 const button8 = document.querySelector('#eight');
 const button9 = document.querySelector('#nine');
 const button0 = document.querySelector('#zero');
+const buttonDecimal = document.querySelector('#decimal')
 const addOperator = document.querySelector('#addOperator');
 const subtractOperator = document.querySelector('#subtractOperator');
 const multiplyOperator = document.querySelector('#multiplyOperator');
@@ -25,7 +26,7 @@ let queuedOperators = [];
 function convertArrayToInteger(arr) {
   stringNumbers = arr.join('');
   queuedArrayNumbers = []
-  return parseInt(stringNumbers);
+  return parseFloat(stringNumbers);
 }
 
 function updateQueuedNumbers() {
@@ -44,7 +45,7 @@ function getCurrentOperator(queuedOperators) {
 }
 
 function roundToTwo(num) {
-  return +(Math.round(num + "e+2")  + "e-2");
+  return +(Math.round(num + "e+3")  + "e-3");
 }
 
 function operate(operator,x,y){
@@ -126,6 +127,9 @@ button9.addEventListener('click', e =>{
 
 button0.addEventListener('click', e =>{
   queuedArrayNumbers[queuedArrayNumbers.length] = '0';})
+
+buttonDecimal.addEventListener('click', e =>{
+  queuedArrayNumbers[queuedArrayNumbers.length] = '.';})
 
 addOperator.addEventListener('click', e =>{
   queuedOperators.push('+');
