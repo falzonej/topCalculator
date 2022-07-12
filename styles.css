@@ -38,17 +38,12 @@
   align-items:baseline;
   font-weight: 900;
   font-size: 60px;
-  background-color: dimgrey;
+  background-color: darkblue;
   color: whitesmoke;
   width: 15.4vh;
 }
 
-#decimal{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: dimgray;
-}
+
 
 .buttons{
   display: flex;
@@ -63,7 +58,12 @@
 }
 
 .numButton{
-  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 40px;
+  background-color: dimgrey;
 }
 
 .operatorButton{
