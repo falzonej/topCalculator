@@ -1,9 +1,32 @@
+.calculatorBody{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 400px;
+  background-color: slategrey;
+  border: 10px double black;
+}
+
+#calculatorName{
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 3vh;
+  border: 1px double black;
+  color: rgb(40, 34, 34);
+  background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
+}
+
 #calculatorDisplay{
   display: flex;
-  border: black 1px solid;
   justify-content: flex-end;
-  width: 20vh;
-  height: 1.5vh;
+  font-size: 27px;
+  font-weight: 500;
+  width: 25vh;
+  height: 2vh;
+  background-color: cadetblue;
+  border: black 4px inset;
 }
 
 #row1{
@@ -38,12 +61,10 @@
   align-items:baseline;
   font-weight: 900;
   font-size: 60px;
+  width: 15.4vh;
   background-color: darkblue;
   color: whitesmoke;
-  width: 15.4vh;
 }
-
-
 
 .buttons{
   display: flex;
