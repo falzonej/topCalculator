@@ -52,7 +52,7 @@
 #clear{
   justify-content: right;
   font-weight: 900;
-  font-size: 60px;
+  font-size: 4vh;
   width: 10vh;
 }
 
@@ -60,7 +60,7 @@
   justify-content: space-around;
   align-items:baseline;
   font-weight: 900;
-  font-size: 60px;
+  font-size: 4vh;
   width: 15.4vh;
   background-color: darkblue;
   color: whitesmoke;
@@ -83,7 +83,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 3vh;
   background-color: dimgrey;
 }
 
@@ -92,6 +92,6 @@
   justify-content: space-around;
   align-items:baseline;
   font-weight: 900;
-  font-size: 60px;
+  font-size: 4vh;
   background-color: orange;
 }
