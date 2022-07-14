@@ -24,7 +24,7 @@ let queuedNumbers = [];
 let queuedOperators = [];
 
 function convertArrayToInteger(arr) {
-  stringNumbers = arr.join('');
+  let stringNumbers = arr.join('');
   queuedArrayNumbers = [];
   return parseFloat(stringNumbers);
 }
@@ -44,7 +44,7 @@ function getCurrentOperator(queuedOperators) {
   return queuedOperators.shift();
 }
 
-function roundToTwo(num) {
+function roundToThree(num) {
   return +(Math.round(num + "e+3")  + "e-3");
 }
 
@@ -52,18 +52,14 @@ function operate(operator,x,y){
   let result = 0;
   switch(operator){
     case '+':
-      result = x+y;
-      break;
+      return x+y;
     case '-':
-      result = x-y;
-      break;
+      return x-y;
     case '*':
-      result = x*y;
-      break;
+      return x*y;
     case '/':
-      result = x/y;
+      return x/y;
   }
-  return result;
 }
 
 function updateCalcDisplay(input) {
@@ -87,11 +83,11 @@ function expressionCompletingEquals() {
   while(i<queuedNumbers.length){
     equals();
   }
-  let roundedEqualsValue = roundToTwo(equalsValue);
+  let roundedEqualsValue = roundToThree(equalsValue);
   return updateCalcDisplay(roundedEqualsValue);
 }
 
-const clear = () => {
+function clear() {
   queuedArrayNumbers = [];
   queuedNumbers = [];
   queuedOperators = [];
